@@ -18,6 +18,12 @@ app.use(myLogger)
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
+app.get("/",(req, res)=>{
+    res.json({
+        msg:"test"
+    })
+})
+
 app.use('/api/users', usersRouter)
 app.use('/api/orders', ordersRouter)
 app.use('/api/products', productsRouter)
