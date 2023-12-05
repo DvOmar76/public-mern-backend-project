@@ -374,3 +374,13 @@ Method: PUT, Path: /api/products/6565dc8616aa5d3c42ad628e, Date: 11/29/2023, Tim
 Method: PUT, Path: /api/products/6565dc8616aa5d3c42ad628e, Date: 11/29/2023, Time: 3:56:51 PM
 Method: PUT, Path: /api/products/6565dc8616aa5d3c42ad628e, Date: 11/29/2023, Time: 3:56:58 PM
 Method: PUT, Path: /api/products/6565dc8616aa5d3c42ad628e, Date: 11/29/2023, Time: 3:57:12 PM
+Method: GET, Path: /, Date: 12/5/2023, Time: 2:34:52 PM
+Method: GET, Path: /favicon.ico, Date: 12/5/2023, Time: 2:34:53 PM
+Method: GET, Path: /, Date: 12/5/2023, Time: 2:35:07 PM
+Method: GET, Path: /, Date: 12/5/2023, Time: 2:35:27 PM
+Method: GET, Path: /, Date: 12/5/2023, Time: 2:35:28 PM
+Method: GET, Path: /, Date: 12/5/2023, Time: 2:35:28 PM
+Method: GET, Path: /, Date: 12/5/2023, Time: 2:35:29 PM
+Method: GET, Path: /, Date: 12/5/2023, Time: 2:35:29 PM
+Method: GET, Path: /, Date: 12/5/2023, Time: 2:40:13 PM
+Method: GET, Path: /api/products/, Date: 12/5/2023, Time: 2:40:21 PM
