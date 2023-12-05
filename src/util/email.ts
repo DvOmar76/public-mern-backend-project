@@ -14,23 +14,13 @@ const transporter = nodemailer.createTransport({
   },
 })
 
-
-
 export async function sendActivationEmail(userEmail: string, activationToken: string) {
   const activationLink = `${process.env.MAILER_ACTIVATION_DOMAIN}/api/users/activateUser/${activationToken}`
-  console.log('activationLink:', userEmail)
-  console.log(process.env.MAILER_USER)
-  console.log(process.env.MAILER_PASS)
-  
-  
-  console.log(process.env.MAILER_USER)
   const mailOptions = {
     from: process.env.MAILER_USER,
     to: userEmail,
     subject: 'Action activation',
     html: `<p>Hello,</p> <p>Click <a href="${activationLink}">here</a> to activate your account</p>`,
   }
-
-  const info = await transporter.sendMail(mailOptions)
-  return info
+return  await transporter.sendMail(mailOptions)
 }

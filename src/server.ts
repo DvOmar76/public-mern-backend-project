@@ -8,7 +8,6 @@ import categoriesRouter from './routers/category'
 import ordersRouter from './routers/orders'
 import apiErrorHandler from './middlewares/errorHandler'
 import myLogger from './middlewares/logger'
-
 config()
 const app = express()
 const PORT = 5050
@@ -38,3 +37,6 @@ mongoose
 app.listen(PORT, () => {
   console.log('Server running http://localhost:' + PORT)
 })
+
+
+export default app;

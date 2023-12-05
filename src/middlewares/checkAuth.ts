@@ -9,7 +9,7 @@ export function checkAuth(expectedRole: Role) {
 
     if (token) {
       try {
-        const decodedUser = jwt.verify(token, process.env.TOKEN_SECRET as string) as DecodedUser
+        const decodedUser = jwt.verify(token, process.env.JWT_ACCESS_TOKEN_SECRET as string) as DecodedUser
 
         if (decodedUser.role !== expectedRole) {
           next(ApiError.forbidden('NOT ALLOWED'))
