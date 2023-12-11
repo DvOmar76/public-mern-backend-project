@@ -18,6 +18,7 @@ class ApiError {
   static internal(msg: string) {
     return new ApiError(500, msg)
   }
+
 }
 
 export default ApiError

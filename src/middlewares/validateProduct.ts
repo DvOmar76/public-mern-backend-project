@@ -7,7 +7,7 @@ import ApiError from '../errors/ApiError'
 export const validateProduct = (req: Request, res: Response, next: NextFunction) => {
     const getSchema = z.object({
         name: (zod.string().nonempty('name is required')).min(5).max(50),
-        description: zod.string().min(5).max(50).optional()
+        description: zod.string().min(5).optional()
     })
 
     try {

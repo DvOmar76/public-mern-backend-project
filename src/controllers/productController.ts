@@ -13,7 +13,7 @@ type SortOptions = {
 //Get ALL Products
 export const getProducts = async (req: Request, res: Response, next: NextFunction) => {
   const page = Number(req.query.page) || 1
-  const perPage = Number(req.query.perPage) || 3
+  const perPage = Number(req.query.perPage) || 8
   const products = await Product.find().populate('categories')
   const name = req.query.name
   const sort = req.query.sort

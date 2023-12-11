@@ -28,7 +28,47 @@ export const getCategory= async (req:Request, res:Response ,next:NextFunction)=>
   }
 }
 export const createCategory= async  (req:Request, res:Response)=>{
-  // you should work on validation in future  remember  name is unique
+// const categories=[
+//   {
+//     "name": "Electronics"
+//   },
+//   {
+//     "name": "Computers"
+//   },
+//   {
+//     "name": "Mobile Phones"
+//   },
+//   {
+//     "name": "Gaming"
+//   },
+//   {
+//     "name": "Photography"
+//   },
+//   {
+//     "name": "Health & Fitness"
+//   },
+//   {
+//     "name": "Home Entertainment"
+//   },
+//   {
+//     "name": "Home Appliances"
+//   },
+//   {
+//     "name": "Audio"
+//   },
+//   {
+//     "name": "Storage"
+//   }
+// ]
+//  categories.forEach(async (category)=>{
+//   const newCategory=  await servicesCreateCategory(category.name)
+//
+// })
+// //   await Category.collection(categories)
+//   res.status(201).json({
+//     msg: "created categories",
+//     category: servicesGetCategories()
+//   })
   const {name}=req.body
   const category=  await servicesCreateCategory(name)
   res.status(201).json({

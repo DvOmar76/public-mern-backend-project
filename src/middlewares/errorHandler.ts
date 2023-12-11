@@ -10,4 +10,5 @@ const apiErrorHandler = (err: typeof ApiError, req: Request, res: Response, next
   res.status(500).json({ msg: 'Something went wrong.' })
 }
 
+
 export default apiErrorHandler

@@ -2,33 +2,47 @@ import express from 'express'
 
 import ApiError from '../errors/ApiError'
 import User from '../models/user'
-import { DeleteOneUser, activation, addOneUser, getAllUsers, getOneUser, login, register, updateUser } from '../controllers/userController'
+import {
+  DeleteOneUser,
+  activation,
+  addOneUser,
+  getAllUsers,
+  getOneUser,
+  login,
+  register,
+  updateUser,
+  logout,
+  isLoggedIn, isLoggedOut
+} from '../controllers/userController'
 import { validateLoginUser, validateUpdateUser, validateUser, validateUserID } from '../middlewares/userValdiation'
 import { checkAuth } from '../middlewares/checkAuth'
+import { checkUserOwnership } from '../middlewares/checkUserOwnership'
 const router = express.Router()
 
-//List all Users : work 
-router.get('/',checkAuth("admin"), getAllUsers)
+//List all Users : work
+router.get('/',isLoggedIn,checkAuth("admin"), getAllUsers)
 
-//List one user : work 
-router.get('/:userId',validateUserID, getOneUser)
+//List one user : work
+router.get('/:userId',isLoggedIn,validateUserID, checkUserOwnership,getOneUser)
 
 
 //Delete User : work
-router.delete('/:userId',validateUserID,checkAuth("admin"), DeleteOneUser)
+router.delete('/:userId',isLoggedIn,validateUserID, DeleteOneUser)
 
 
 //Update user : Work
-router.put('/:userId',validateUserID,validateUpdateUser, updateUser)
+router.put('/:userId',isLoggedIn,validateUserID,validateUpdateUser, updateUser)
 
 //Add User : work
-router.post('/', addOneUser)
+router.post('/',isLoggedIn , addOneUser)
 
 
 
-
-router.post('/register',validateUser, register)
-router.post('/login',validateLoginUser, login)
+// validateUser  zod validate
+router.post('/register',isLoggedOut,validateUser, register)
+//validateLoginUser zod validate
+router.post('/login',isLoggedOut,validateLoginUser, login)
+router.post('/logout',isLoggedIn, logout)
 
 router.get('/activateUser/:activationToken',activation)
 
